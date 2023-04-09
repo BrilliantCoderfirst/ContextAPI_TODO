@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from "react";
+import "./App.css";
+import Heading from "./Pages/Heading";
+import TodoLogic from "./Pages/TodoLogic";
+import { v4 as newId } from "uuid";
+
+const UserContext = createContext();
 
 function App() {
+
+
+  const [task, setTask] = useState([]);
+
+  const isAddTask = (newTask) => {
+      setTask([...task, {id: newId(), task: newTask, complete: false}]);
+  }
+
+  const isCompleted = (id, status) => {
+      setTask(task.map((item) => (item.id === id ? {...item, complete: status} : item)))
+  }
+
+  const isEdit = (id, upDatedTask) => {
+      setTask(task.map((item) => (item.id === id ? {...item, task: upDatedTask} : (item)) ));
+  }
+
+  const isDelete = (id) => {
+      setTask(task.filter((item) => item.id !== id ));
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UserContext.Provider value={{task, isAddTask, isEdit, isDelete, isCompleted}}>
+        <div className="container">
+          <Heading />
+          <TodoLogic />
+        </div>
+      </UserContext.Provider>
+    </>
   );
 }
 
-export default App;
+export { App, UserContext };

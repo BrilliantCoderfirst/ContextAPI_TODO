@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headingPart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 247px;
+    align-items: center;
+    justify-content: center;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.headingPart h1 {
+    font-size: 130px;
+    color: #a09d9d;
+    font-weight: 800;
+    margin: 0px;
 }
-
-.App-link {
-  color: #61dafb;
+.headingPart p {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0px;
+    color: #b8b4b4;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.lists {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 30px;
+}
+.input input {
+    width: 500px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+.input .inputField {
+    width: 714px;
+    height: 63px;
+    box-shadow: 0px 0px 10px rgb(149 146 146);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    font-size: 27px;
+}
+.input .inputField input {
+    font-size: 25px;
+}
+.items {
+    margin-top: 40px;
+}
+.card {
+    display: flex;
+    width: 714px;
+    height: 62px;
+    background-color: rgb(229 231 246);
+    align-items: center;
+    justify-content: space-between;
+    font-size: 23px;
+    margin-top: 10px;
+    border: 2px solid rgb(255, 79, 79);
+    border-radius: 10px;
+}
+.completedTask {
+    text-decoration: line-through;
+}
+.unDisplay {
+    display: none;
+}
+.upDateData {
+    display: flex;
+    width: 714px;
+    height: 62px;
+    background-color: rgb(229 231 246);
+    align-items: center;
+    font-size: 23px;
+    margin-top: 10px;
+    border: 2px solid red;
+}
+.upDateData input {
+    width: 650px;
+    height: 58px;
+    border: none;
+    outline: none;
+    background-color: rgb(229 231 246);
+    align-items: center;
+    padding-left: 20px;
+    font-size: 25px;
+}
+.upDateData button {
+    width: 120px;
+    background-color: aquamarine;
+    height: 40px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 700;
+    color: rgb(255, 0, 76);
+}
+.card .leftCard {
+    width: 438px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.card .leftCard input {
+    width: 22px;
+    height: 26px;
+}
+.card .leftCard p {
+    padding-left: 32px;
+}
+.card .rightCard {
+    width: 143px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card .rightCard span {
+    font-size: 31px;
 }
